@@ -43,8 +43,9 @@ class BreakingNewsView extends HookWidget {
         ],
       ),
       body: BlocBuilder<RemoteArticlesCubit, RemoteArticlesState>(
-        builder: (_, state) {
+        builder: (ss, state) {
           switch (state.runtimeType) {
+
             case RemoteArticlesLoading:
               return const Center(child: CupertinoActivityIndicator());
             case RemoteArticlesFailed:

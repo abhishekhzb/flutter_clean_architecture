@@ -102,12 +102,18 @@ class ArticleWidget extends StatelessWidget {
               children: [
                 const Icon(Ionicons.time_outline, size: 16),
                 const SizedBox(width: 4),
-                Text(
-                  article.publishedAt ?? '',
-                  style: const TextStyle(
-                    fontSize: 12,
-                  ),
-                ),
+                Expanded(
+                  child: Text(
+                      article.publishedAt ?? '',
+                      maxLines: 1,
+                      softWrap: false,
+                      overflow: TextOverflow.ellipsis,
+                      style: const TextStyle(
+                        fontSize: 12,
+                        color: Colors.black54,
+                      ),
+                    ),
+                )
               ],
             ),
           ],
